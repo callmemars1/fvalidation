@@ -21,6 +21,7 @@ func (vr ValidationResult) ToMap() ValidationResultMap {
 
 		failures = result[failure.field]
 		failures = append(failures, failure.payload.ToMap())
+		result[failure.field] = failures
 	}
 
 	return result
